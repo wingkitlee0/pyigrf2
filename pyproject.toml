@@ -1,9 +1,9 @@
 [build-system]
-requires = ["meson-python>=0.13.0", "numpy"]
+requires = ["meson-python>=0.13.0", "oldest-supported-numpy"]
 build-backend = "mesonpy"
 
 [project]
-name = "pyigrf"
+name = "pyigrf2"
 version = "0.1.0"
 description = "Python bindings for IGRF (International Geomagnetic Reference Field)"
 readme = "README.md"

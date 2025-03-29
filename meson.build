@@ -1,5 +1,5 @@
 project(
-  'pyigrf',
+  'pyigrf2',
   'c', 'fortran',
   version: '0.1.0',
   license: 'MIT',
@@ -15,4 +15,4 @@ py_dep = py.dependency()
 numpy_dep = dependency('numpy')
 
 # Set the package directory
-subdir('pyigrf')
+subdir('pyigrf2')

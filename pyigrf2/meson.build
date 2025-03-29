@@ -11,7 +11,7 @@ incdir_f2py = run_command(py,
 inc_np = include_directories(incdir_numpy, incdir_f2py)
 
 # The actual command is
-# python -m numpy.f2py -c -m _igrf igrf.pyf --build-dir pyigrf --lower --skip-empty-wrappers --verbose
+# python -m numpy.f2py -c -m _igrf igrf.pyf --build-dir pyigrf2 --lower --skip-empty-wrappers --verbose
 #
 # When using a prewritten pyf signature file, we do not need to pass the Fortran source code. See
 # https://github.com/numpy/numpy/issues/25654
@@ -24,7 +24,7 @@ f2py_target = custom_target(
     py,
     '-m', 'numpy.f2py',
     '@INPUT@',
-    '--build-dir', 'pyigrf',
+    '--build-dir', 'pyigrf2',
     '--lower', '--skip-empty-wrappers', '--verbose'
   ],
   build_by_default: true,
@@ -37,10 +37,10 @@ py.extension_module('_igrf',
     include_directories: inc_np,
     dependencies : py_dep,
     install : true,
-    subdir : 'pyigrf'
+    subdir : 'pyigrf2'
 )
 
 py.install_sources(
     '__init__.py',
-    subdir : 'pyigrf'
+    subdir : 'pyigrf2'
 )
