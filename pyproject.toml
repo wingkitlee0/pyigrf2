@@ -1,0 +1,20 @@
+[build-system]
+requires = ["meson-python>=0.13.0", "numpy"]
+build-backend = "mesonpy"
+
+[project]
+name = "pyigrf"
+version = "0.1.0"
+description = "Python bindings for IGRF (International Geomagnetic Reference Field)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pyigrf"
+
+[tool.meson-python.args]
+setup = ['--default-library=shared']
