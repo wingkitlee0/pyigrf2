@@ -1,0 +1,6 @@
+numpy
+meson>=0.63.0
+ninja
+wheel
+build
+meson-python
